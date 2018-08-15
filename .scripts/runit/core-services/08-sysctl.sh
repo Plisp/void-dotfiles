@@ -6,7 +6,7 @@
              /etc/sysctl.conf; do
 
         if [ -e "$i" ]; then
-            printf '* Applying %s ...\n' "$i"
+            #printf '* Applying %s ...\n' "$i"
             sysctl -p "$i"
         fi
     done

@@ -4,10 +4,10 @@ mpc pause
 
 B='#00000000'  # blank
 C='#ffffff22'  # clear ish
-D='#ff00ffcc'  # default
-T='#ee00eeee'  # text
-W='#880000bb'  # wrong
-V='#bb00bbbb'  # verifying
+D='#12faffdd'  # ring 
+T='#30ccccee'  # text
+W='#ff3d00bb'  # wrong
+V='#1de9b6bb'  # verifying
 
 i3lock \
 	--insidevercolor=$C   \
@@ -16,7 +16,7 @@ i3lock \
 	--insidewrongcolor=$C \
 	--ringwrongcolor=$W   \
 	\
-	--insidecolor=$B      \
+	--insidecolor=$C      \
 	--ringcolor=$D        \
 	--linecolor=$B        \
 	--separatorcolor=$D   \
@@ -26,7 +26,7 @@ i3lock \
 	--timecolor=$T        \
 	--datecolor=$T        \
 	--layoutcolor=$T      \
-	--keyhlcolor=$W       \
+	--keyhlcolor=$V       \
 	--bshlcolor=$W        \
 	\
 	--ignore-empty-password\

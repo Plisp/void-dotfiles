@@ -16,8 +16,8 @@ exec --no-startup-id mpd
 for_window [class="^.*"] border pixel 2
 font pango:monospace 8
 
-gaps inner 13
-gaps outer 10
+gaps inner 15
+gaps outer 5
 workspace_auto_back_and_forth yes
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -29,7 +29,7 @@ bindsym $mod+Return exec urxvtc
 # kill focused window
 bindsym $mod+q kill
 # this sometimes works 
-bindsym $mod+Shift+q exec urxvt -e xkill 
+bindsym --release $mod+Shift+q exec xkill 
 
 # run application launcher
 bindsym $mod+x exec --no-startup-id rofi -show run -matching fuzzy
