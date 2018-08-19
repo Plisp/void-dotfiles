@@ -19,7 +19,7 @@ alias set='TERM=xterm sudo -E emacsclient -ta ""'
 alias ee='emacsclient -e "(kill-server)"'
 
 alias supdate='sudo xbps-install -Su && xbps-reconfigure -fa'
-alias xi='sudo xbps-install'
+alias xin='sudo xbps-install'
 alias xq='xbps-query'
 alias xrm='sudo xbps-remove'
 alias xrc='sudo xbps-reconfigure'
