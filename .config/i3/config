@@ -1,5 +1,3 @@
-# i3 config
-
 set $mod Mod4
 
 # start applications
@@ -7,14 +5,13 @@ set $mod Mod4
 exec --no-startup-id compton -CGb --xrender-sync-fence
 exec --no-startup-id emacs --daemon
 exec --no-startup-id urxvtd -f
-exec_always --no-startup-id feh --bg-fill ~/bg.jpg
+exec_always --no-startup-id wal -R
 exec_always --no-startup-id ~/.scripts/polybar
 exec --no-startup-id autocutsel -fork
 exec --no-startup-id mpd
-#exec --no-startup-id transmission-daemon
 
 for_window [class="^.*"] border pixel 2
-font pango:monospace 8
+font pango:DejaVu Sans Mono 8
 
 gaps inner 15
 gaps outer 5
@@ -24,22 +21,21 @@ workspace_auto_back_and_forth yes
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec urxvtc && cat ~/.cache/wal/sequences
 
 # kill focused window
 bindsym $mod+q kill
-# this sometimes works 
-bindsym --release $mod+Shift+q exec xkill 
+bindsym --release $mod+Shift+q exec xkill
 
 # run application launcher
 bindsym $mod+x exec --no-startup-id rofi -show run -matching fuzzy
 
 # My bindings
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master -q 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master -q 5%-
-bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master,0 toggle"
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master,0 toggle
 
 # change focus
 bindsym $mod+j focus left
@@ -135,6 +131,20 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+set_from_resource $bg           i3wm.color0 #ff0000
+set_from_resource $bg-alt       i3wm.color14 #ff0000
+set_from_resource $fg           i3wm.color15 #ff0000
+set_from_resource $fg-alt       i3wm.color2 #ff0000
+set_from_resource $hl           i3wm.color13 #ff0000
+
+# class                 border      backgr. text indicator      child_border
+client.focused          $fg-alt     $bg     $hl  $fg-alt        $hl
+client.focused_inactive $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.unfocused        $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.background $bg
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -148,16 +158,8 @@ mode "resize" {
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
