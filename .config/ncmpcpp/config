@@ -1,3 +1,4 @@
+##############################################################################
 ## This is the example configuration file. Copy it to $HOME/.ncmpcpp/config ##
 ## or $XDG_CONFIG_HOME/ncmpcpp/config and set up your preferences.          ##
 ##############################################################################
@@ -262,7 +263,7 @@ current_item_inactive_column_suffix = $/r$(end)
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = "(10f)[magenta]{l} (15)[magenta]{c} (30)[magenta]{t|f} (25)[magenta]{pE} (30)[magenta]{CrE}"
 #
 ##### various settings #####
 #
@@ -317,7 +318,7 @@ browser_display_mode = columns
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = ->
+progressbar_look = "─>─"
 #
 ## Available values: database, playlist.
 ##

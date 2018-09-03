@@ -1,28 +1,20 @@
-;=============================================================;
-;							      ;
-;							      ;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗    ;
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗   ;
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝   ;
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗   ;
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║   ;
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ;
-;							      ;
-;=============================================================;
-;							      ;
-;   	To learn more about how to configure Polybar	      ;
-;     	   go to https://github.com/jaagr/polybar	      ;
-;							      ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 [colors]
-background = ${xrdb:color7:#aa002b36}
-background-alt = ${xrdb:color5:#333}
-foreground = ${xrdb:color3:#cdc}
-foreground-alt = ${xrdb:color4:#7aa}
+background = ${xrdb:color0:#aa002b36}
+background-alt = ${xrdb:color6:#333}
+
+; text
+foreground = ${xrdb:color2:#cdc}
+
+; icons 
+foreground-alt = ${xrdb:color5:#7aa}
+
+; TODO: use this
 primary = ${xrdb:color1:#00e5ff}
-secondary = ${xrdb:color2:#2aa198}
-alert = ${xrdb:color3:#bd2c40}
+
+; underlines 
+secondary = ${xrdb:color0:#2aa198}
+
+alert = ${xrdb:color4:#bd2c40}
 
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -33,17 +25,13 @@ height = 27
 radius = 0.0
 fixed-center = true
 
-background = #000
+background = ${colors.background} 
 foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
 
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
+padding-left=1
 
 module-margin-left = 1
 module-margin-right = 1
@@ -65,12 +53,6 @@ tray-padding = 2
 ;wm-restack = i3
 
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -136,14 +118,15 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = ${colors.foreground} 
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
+label-focused-foreground = ${colors.foreground-alt}
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
@@ -175,7 +158,7 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-;label-song-ellipsis = true
+label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -304,7 +287,7 @@ adapter = ADP1
 full-at = 100
 
 format-charging = <label-charging> <animation-charging>
-format-charging-underline = ${colors.background}
+format-charging-underline = ${colors.background-alt}
 
 format-discharging = <label-discharging> <ramp-capacity>
 format-discharging-underline = ${colors.secondary}

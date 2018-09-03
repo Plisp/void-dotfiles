@@ -22,17 +22,15 @@ URxvt.intensityStyles:	true
 ! Transparency?
 URxvt.depth:		32
 
-! Don't Scroll with text
+! No scroll with text
 URxvt.scrollTtyOutput:	false
 URxvt.scrollTtyKeypress:true
 URxvt.scrollWithBuffer:	true
 
 ! Fonts
 URxvt.allow_bold:	true
-URxvt.font: 		xft:Hack:pixelsize=14:antialias=true,\
-			!-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
-			xft:siji:pixelsize=14:antialias=true
-URxvt.boldFont: 	xft:Hack:pixelsize=14:style=bold:antialias=true
+URxvt.font: 		xft:GohuFont:style=Regular:pixelsize=13
+URxvt.boldFont: 	xft:GohuFont:style=Bold:pixelsize=13:antialias=true
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
