@@ -2,3 +2,4 @@
 
 msg "Mounting root filesystem r/w..."
 mount -o remount,rw / || emergency_shell
+mount /home
