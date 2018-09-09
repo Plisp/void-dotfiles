@@ -368,7 +368,7 @@ c.colors.tabs.selected.odd.fg = 'white'
 ## Background color for webpages if unset (or empty to use the theme's
 ## color)
 ## Type: QtColor
-c.colors.webpage.bg = 'white'
+c.colors.webpage.bg = ''
 
 ## How many commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -631,7 +631,7 @@ c.content.private_browsing = False
 ## Valid values:
 ##   - system: Use the system wide proxy.
 ##   - none: Don't use any proxy
-c.content.proxy = 'system'
+c.content.proxy = 'http://proxy.det.nsw.edu.au:8080'
 
 ## Send DNS requests over the configured proxy.
 ## Type: Bool
@@ -704,7 +704,7 @@ c.downloads.remove_finished = 500
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-c.editor.command = ['gvim', '-f', '{}']
+c.editor.command = ['emacsclient', '-ca', '{}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -749,11 +749,11 @@ c.fonts.messages.warning = '10pt monospace'
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = 'GohuFont, Hack, "DejaVu Sans Mono", Inconsolata'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '10pt sans-serif'
+c.fonts.prompts = '10pt monospace'
 
 ## Font used in the statusbar.
 ## Type: Font
@@ -997,12 +997,12 @@ c.qt.force_platform = None
 
 ## Show a scrollbar.
 ## Type: Bool
-c.scrolling.bar = False
+c.scrolling.bar = True
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
 ## Type: Bool
-c.scrolling.smooth = False
+c.scrolling.smooth = True
 
 ## The name of the session to save by default. If this is set to null,
 ## the session which was last loaded is saved.
@@ -1141,7 +1141,7 @@ c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
 ##   - bottom
 ##   - left
 ##   - right
-c.tabs.position = 'top'
+c.tabs.position = 'left'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
@@ -1149,7 +1149,7 @@ c.tabs.position = 'top'
 ##   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
-c.tabs.select_on_remove = 'next'
+c.tabs.select_on_remove = 'last-used'
 
 ## When to show the tab bar.
 ## Type: String
@@ -1158,12 +1158,12 @@ c.tabs.select_on_remove = 'next'
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'multiple'
+c.tabs.show = 'switching'
 
 ## Time to show the tab bar before hiding it when tabs.show is set to
 ## 'switching'.
 ## Type: Int
-c.tabs.show_switching_delay = 800
+c.tabs.show_switching_delay = 600 
 
 ## Open a new window for every tab.
 ## Type: Bool
@@ -1187,7 +1187,7 @@ c.tabs.title.alignment = 'left'
 ## Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
 ## private mode is enabled.
 ## Type: FormatString
-c.tabs.title.format = '{index}: {title}'
+c.tabs.title.format = '{perc}{title}'
 
 ## The format to use for the tab title for pinned tabs. The same
 ## placeholders like for `tabs.title.format` are defined.
@@ -1205,7 +1205,7 @@ c.tabs.indicator.width = 3
 
 ## Whether to wrap when changing tabs.
 ## Type: Bool
-c.tabs.wrap = True
+c.tabs.wrap = False
 
 ## Whether to start a search when something else than a URL is entered.
 ## Type: String
