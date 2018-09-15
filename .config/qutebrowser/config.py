@@ -631,7 +631,7 @@ c.content.private_browsing = False
 ## Valid values:
 ##   - system: Use the system wide proxy.
 ##   - none: Don't use any proxy
-c.content.proxy = 'http://proxy.det.nsw.edu.au:8080'
+c.content.proxy = 'system'
 
 ## Send DNS requests over the configured proxy.
 ## Type: Bool

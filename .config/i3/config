@@ -34,6 +34,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master -q 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master -q 5%-
 bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master,0 toggle"
+bindsym Print exec maim -su ~/personal/$(date +%s).png
 
 # change focus
 bindsym $mod+j focus left
