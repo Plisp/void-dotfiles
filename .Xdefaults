@@ -37,6 +37,11 @@ URxvt.boldFont: 	xft:GohuFont:style=Bold:pixelsize=13:antialias=true
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
+! Separate ctrl-i from TAB
+URxvt.keysym.Control-Shift-i: \033[a5i
+URxvt.keysym.Control-i: \033w
+URxvt.keysym.Control-w: \033w
+
 ! Perl extensions
 URxvt.perl-ext-common:		default,matcher,url-select,keyboard-select,font-size
 URxvt.colorUL:			#0c8c4a

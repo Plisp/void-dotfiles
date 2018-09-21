@@ -32,7 +32,3 @@ alias z='zathura'
 export EDITOR='emacsclient -t -a ""'
 export VISUAL='emacsclient -c -a ""'
 export BROWSER='qutebrowser'
-
-#export {http,https,ftp}_proxy="http://proxy.det.nsw.edu.au:8080"
-export no_proxy=localhost
-export {CFLAGS,CXXFLAGS}="-march=native -O2 -ftree-vectorize -pipe"
