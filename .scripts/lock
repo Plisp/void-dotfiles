@@ -2,12 +2,12 @@
 
 mpc pause
 
-B='#00000000'  # blank
-C='#ffffff22'  # clear ish
-D='#12faffdd'  # ring 
-T='#30ccccee'  # text
-W='#ff3d00bb'  # wrong
-V='#1de9b6bb'  # verifying
+B='#00000000'
+C='#ffffff22'
+D='#12faffdd'
+T='#30ccccee'
+W='#ff3d00bb'
+V='#1de9b6bb'
 
 i3lock \
 	--insidevercolor=$C   \

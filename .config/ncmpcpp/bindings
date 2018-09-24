@@ -1,3 +1,4 @@
+##############################################################
 ## This is the example bindings file. Copy it to            ##
 ## ~/.ncmpcpp/bindings or $XDG_CONFIG_HOME/ncmpcpp/bindings ##
 ## and set up your preferences                              ##
@@ -231,9 +232,6 @@
 #def_key "right"
 #  volume_up
 #
-#def_key "+"
-#  volume_up
-#
 #def_key "left"
 #  previous_column
 #
@@ -243,8 +241,8 @@
 #def_key "left"
 #  volume_down
 #
-#def_key "-"
-#  volume_down
+def_key "-"
+  volume_down
 #
 #def_key ":"
 #  execute_command
@@ -291,8 +289,8 @@
 #def_key "8"
 #  show_visualizer
 #
-#def_key "="
-#  show_clock
+def_key "="
+  show_clock
 #
 #def_key "@"
 #  show_server_info
@@ -321,12 +319,12 @@
 #def_key "backspace"
 #  replay_song
 #
-#def_key "f"
-#  seek_forward
-#
-#def_key "b"
-#  seek_backward
-#
+def_key "f"
+  seek_forward
+
+def_key "b"
+  seek_backward
+
 #def_key "r"
 #  toggle_repeat
 #
@@ -387,11 +385,11 @@
 #def_key "ctrl-_"
 #  select_found_items
 #
-#def_key "/"
-#  find
-#
-#def_key "/"
-#  find_item_forward
+def_key "/"
+  find
+
+def_key "/"
+  find_item_forward
 #
 #def_key "?"
 #  find
@@ -539,17 +537,12 @@
 #
 #def_key "q"
 #  quit
-#
-#
-def_key "f"
-    find
-def_key "f"
-    find_item_forward
 
 def_key "+"
-    show_clock
-def_key "="
     volume_up
+
+def_key "-"
+    volume_down
 
 def_key "j"
     scroll_down
