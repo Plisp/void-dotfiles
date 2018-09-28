@@ -31,4 +31,3 @@ alias z='zathura'
 
 export EDITOR='emacsclient -t -a ""'
 export VISUAL='emacsclient -c -a ""'
-export BROWSER='qutebrowser'

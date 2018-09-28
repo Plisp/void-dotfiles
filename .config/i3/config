@@ -4,11 +4,11 @@ set $mod Mod4
 
 exec --no-startup-id compton -CGb --xrender-sync-fence
 exec --no-startup-id emacs --daemon
-exec --no-startup-id urxvtd -f
-exec_always --no-startup-id wal -R  #-i ~/bg/finland.jpg
-exec_always --no-startup-id ~/.scripts/polybar
-exec --no-startup-id autocutsel -fork
 exec --no-startup-id mpd
+exec --no-startup-id urxvtd -f
+exec --no-startup-id autocutsel -fork
+exec_always --no-startup-id wal -R  #-i ~/bg/finland.jpg
+exec_always --no-startup-id mybar
 
 for_window [class="^.*"] border pixel 2
 font pango:DejaVu Sans Mono 8
@@ -39,20 +39,19 @@ bindsym Print exec maim -su ~/personal/$(date +%s).png
 # GUI
 bindsym $mod+Shift+e exec --no-startup-id emacsclient -ca ""
 bindsym $mod+b exec --no-startup-id qutebrowser --loglevel=critical
-bindsym $mod+Shift+p exec --no-startup-id zathura
 bindsym $mod+z exec --no-startup-id lock
 
 # CLI
 bindsym $mod+f exec --no-startup-id urxvt -e ranger
 bindsym $mod+Shift+f exec --no-startup-id urxvt -e sudo ranger /
 bindsym $mod+m exec --no-startup-id urxvt -e ncmpcpp
-bindsym $mod+p exec --no-startup-id urxvt -e htop
+bindsym $mod+Shift+p exec --no-startup-id urxvt -e htop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -61,10 +60,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -72,8 +71,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+# split in horizontal orientation (across)
+bindsym $mod+a split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -92,7 +91,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -163,10 +162,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym $mod+r mode "default"

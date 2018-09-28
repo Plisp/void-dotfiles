@@ -1,0 +1,11 @@
+set wrapmargin=3
+set tabstop=2
+set shiftwidth=2
+set wrapscan
+set showmode
+set ignorecase
+set showmatch
+set autoindent
+set magic
+set redraw
+set optimize

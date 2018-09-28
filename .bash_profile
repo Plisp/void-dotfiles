@@ -1,7 +1,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 [[ -f ~/.personal ]] && . ~/.personal
 
-export PATH=$PATH:$HOME/.scripts
+export PATH=$HOME/.scripts:$PATH
 
 if [ -f ~/.cache/wal/sequences ]; then
 	(cat ~/.cache/wal/sequences &)
