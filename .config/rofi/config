@@ -1,16 +1,16 @@
 ! rofi settings
 
-!rofi.theme:		~/.cache/wal/colors-rofi-dark.rasi
+rofi.theme:		~/.cache/wal/colors-rofi-dark.rasi
 
-rofi.color-window:     #ff000000, #000, #009e7f
-rofi.color-normal:     #ee000000, #00838f, #ee000000, #00e5ff, #000
-rofi.color-active:     #002b37, #008ed4, #003643, #008ed4, #66c6ff
-ofi.color-urgent:     #002b37, #da4281, #003643, #008ed4, #890661
+!rofi.color-window:     #ff000000, #000, #009e7f
+!rofi.color-normal:     #ee000000, #00838f, #ee000000, #00e5ff, #000
+!rofi.color-active:     #002b37, #008ed4, #003643, #008ed4, #66c6ff
+!rofi.color-urgent:     #002b37, #da4281, #003643, #008ed4, #890661
 
 rofi.font:              Inconsolata 14
-rofi.padding:           13
+rofi.padding:           12
 rofi.separator-style:   solid
-rofi.lines:             10
+rofi.lines:             22
 rofi.bw:                0
 rofi.opacity:           10
 rofi.hide-scrollbar:    true

@@ -370,11 +370,6 @@ c.colors.tabs.selected.odd.fg = 'white'
 ## Type: QtColor
 c.colors.webpage.bg = ''
 
-## How many commands to save in the command history. 0: no history / -1:
-## unlimited
-## Type: Int
-c.completion.cmd_history_max_items = 100
-
 ## The height of the completion, in px or as percentage of the window.
 ## Type: PercOrInt
 c.completion.height = '50%'
@@ -412,7 +407,7 @@ c.completion.timestamp_format = '%Y-%m-%d'
 ## How many URLs to show in the web history. 0: no history / -1:
 ## unlimited
 ## Type: Int
-c.completion.web_history_max_items = -1
+c.completion.web_history.max_items = 100
 
 ## Whether quitting the application requires a confirmation.
 ## Type: ConfirmQuit
@@ -997,7 +992,7 @@ c.qt.force_platform = None
 
 ## Show a scrollbar.
 ## Type: Bool
-c.scrolling.bar = True
+c.scrolling.bar = 'when-searching'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
@@ -1218,7 +1213,7 @@ c.url.auto_search = 'naive'
 ## The page to open if :open -t/-b/-w is used without URL. Use
 ## `about:blank` for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://google.com/'
+c.url.default_page = 'https://bing.com/'
 
 ## The URL segments where `:navigate increment/decrement` will search for
 ## a number.
@@ -1254,7 +1249,7 @@ c.url.searchengines = {
 
 ## The page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = ['https://google.com/']
+c.url.start_pages = ['https://bing.com/']
 
 ## The URL parameters to strip with `:yank url`.
 ## Type: List of String

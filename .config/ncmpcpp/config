@@ -283,7 +283,7 @@ song_columns_list_format = "(10f)[magenta]{l} (15)[magenta]{c} (30)[magenta]{t|f
 #
 #playlist_show_mpd_host = no
 #
-#playlist_show_remaining_time = no
+playlist_show_remaining_time = yes
 #
 #playlist_shorten_total_times = no
 #
@@ -306,7 +306,7 @@ browser_display_mode = columns
 #
 #incremental_seeking = yes
 #
-#seek_time = 1
+seek_time = 5
 #
 #volume_change_step = 2
 #
