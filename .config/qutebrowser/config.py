@@ -992,7 +992,7 @@ c.qt.force_platform = None
 
 ## Show a scrollbar.
 ## Type: Bool
-c.scrolling.bar = 'when-searching'
+c.scrolling.bar = 'always'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
@@ -1213,7 +1213,7 @@ c.url.auto_search = 'naive'
 ## The page to open if :open -t/-b/-w is used without URL. Use
 ## `about:blank` for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://bing.com/'
+c.url.default_page = 'https://google.com/'
 
 ## The URL segments where `:navigate increment/decrement` will search for
 ## a number.
@@ -1249,7 +1249,7 @@ c.url.searchengines = {
 
 ## The page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = ['https://bing.com/']
+c.url.start_pages = ['https://google.com/']
 
 ## The URL parameters to strip with `:yank url`.
 ## Type: List of String
