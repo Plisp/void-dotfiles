@@ -32,5 +32,13 @@ make clean
 make -j3 --quiet
 make install -j8 --quiet
 
+# emacs
+cd /usr/src/emacs
+git pull
+./configure --quiet --without-toolkit-scroll-bars --without-dbus --without-gsettings --without-libsystemd \
+            --with-sound=alsa --with-mailutils --with-x-toolkit=athena --with-x
+make -j3 --quiet
+make install -j8 --quiet
+
 # cleanup
 unset {C,CXX,CPP}FLAGS

@@ -37,8 +37,8 @@ padding-right=1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Inconsolata:pixelsize=10:antialias=true
-font-1 = Hack:pixelsize=8
+font-0 = Inconsolata:pixelsize=12:antialias=true
+font-1 = Hack:pixelsize=10
 font-2 = siji:pixelsize=10:antialias=true
 
 modules-left = bspwm i3

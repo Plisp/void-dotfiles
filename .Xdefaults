@@ -32,7 +32,8 @@ URxvt.scrollWithBuffer:   true
 !                 xft:Symbola:style=Regular:pixelsize=15
 !URxvt.boldFont:  xft:GohuFont:style=Bold:pixelsize=14:antialias=true
 
-URxvt.font:      xft:Dejavu Sans Mono:style=Regular
+URxvt.font:      xft:Dejavu Sans Mono:style=Regular,\
+                 xft:Symbola:style=Regular
 URxvt.boldFont:  xft:Dejavu Sans Mono:style=Bold
 
 !! Scrollbar
