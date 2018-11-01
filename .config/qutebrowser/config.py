@@ -744,7 +744,7 @@ c.fonts.messages.warning = '10pt monospace'
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = 'GohuFont, Hack, "DejaVu Sans Mono", Inconsolata'
+c.fonts.monospace = 'Hack, "DejaVu Sans Mono", Inconsolata'
 
 ## Font used for prompts.
 ## Type: Font

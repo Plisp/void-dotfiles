@@ -28,10 +28,6 @@ URxvt.scrollTtyKeypress:  true
 URxvt.scrollWithBuffer:   true
 
 !! Fonts
-!URxvt.font:      xft:GohuFont:style=Regular:pixelsize=14,\
-!                 xft:Symbola:style=Regular:pixelsize=15
-!URxvt.boldFont:  xft:GohuFont:style=Bold:pixelsize=14:antialias=true
-
 URxvt.font:      xft:Dejavu Sans Mono:style=Regular,\
                  xft:Symbola:style=Regular
 URxvt.boldFont:  xft:Dejavu Sans Mono:style=Bold
@@ -41,20 +37,17 @@ URxvt.scrollStyle:  rxvt
 URxvt.scrollBar:    false
 
 !!! Perl extensions
-URxvt.perl-ext-common:  default,matcher,url-select,keyboard-select,font-size
+URxvt.perl-ext-common:  default,url-select,keyboard-select,resize-font
 
-!! Url-select
-
-URxvt.urlLauncher:  /usr/bin/xdg-open
-URxvt.keysym.M-u:   perl:url-select:select_next
+!! select without keyboard
+URxvt.keysym.M-u:            perl:url-select:select_next
+URxvt.url-select.launcher:   /usr/bin/xdg-open
+URxvt.url-select.underline:  true 
 
 ! underline links
 URxvt.underlineURLs:  true
-URxvt.colorUL:        #0c8c4a
+URxvt.colorUL:        #1c8c4a
 
 !! Keyboard select
 URxvt.keysym.M-s:  perl:keyboard-select:search
-
-!! resize-font (note:obtain from github)
-URxvt.keysym.C-Down  resize-font:smaller
-URxvt.keysym.C-Up    resize-font:bigger
+URxvt.keyboard-select.clipboard: true
