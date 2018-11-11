@@ -3,34 +3,36 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput se
 # auto cd into dirs
 complete -d cd
 shopt -s autocd
+shopt -s globstar
 
 # complete prefixed commands
 complete -cf sudo
 complete -cf man
 
 # Aliases
-alias l='ls --color=auto -Alh'
-alias l.='ls * -A'
+alias l='ls -Alh --color=always'
+alias l.='ls * -A --color=always'
 alias sd='sudo shutdown -h now'
 
 alias ec='emacsclient -ca ""'
 alias sec='sudo -E emacsclient -ca ""'
-alias et='TERM=xterm emacsclient -ta ""'
-alias set='TERM=xterm sudo -E emacsclient -ta ""'
+alias et='emacsclient -ta ""'
+alias set='sudo -E emacsclient -ta ""'
 alias ee='emacsclient -e "(kill-emacs)"'
 
 alias v='nvim'
+alias vf='nvim $(fzf)'
 alias sv='sudo -E nvim'
 
-alias supdate='sudo xbps-install -Su && xbps-reconfigure -fa'
-alias xin='sudo xbps-install'
 alias xq='xbps-query'
 alias xrm='sudo xbps-remove -Rvf'
-alias xrc='sudo xbps-reconfigure'
+alias xrc='sudo xbps-reconfigure -vf'
 
 alias r='ranger'
 alias sr='sudo ranger'
 alias z='zathura'
 
-export EDITOR='nvim'
-export VISUAL='emacsclient -ca ""'
+xrdb -merge ~/.Xdefaults
+
+# fuzzy completion
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

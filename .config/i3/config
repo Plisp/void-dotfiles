@@ -1,15 +1,14 @@
+# set variables
 set $mod Mod4
+set $terminal --no-startup-id st
 
 # start applications
-
-exec --no-startup-id wal -R #-i bg.jpg
+#exec --no-startup-id mybar
+exec --no-startup-id wal -i bg.jpg
 exec_always --no-startup-id compton -CGb --xrender-sync-fence
-exec --no-startup-id urxvtd -f
 exec --no-startup-id emacs --daemon
 exec --no-startup-id mpd
 exec --no-startup-id autocutsel -fork
-exec --no-startup-id mybar
-#exec --no-startup-id nm-applet
 
 for_window [class="^.*"] border pixel 2
 font pango:DejaVu Sans Mono 8
@@ -20,7 +19,7 @@ workspace_auto_back_and_forth yes
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -38,15 +37,15 @@ bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master,0 toggle"
 bindsym Print exec maim -su ~/personal/$(date +%s).png
 
 # GUI
-bindsym $mod+Shift+e exec --no-startup-id $VISUAL
+bindsym $mod+Shift+e exec --no-startup-id emacsclient -ca ""
 bindsym $mod+b exec --no-startup-id qutebrowser --loglevel=critical
 bindsym $mod+z exec --no-startup-id lock
 
 # CLI
-bindsym $mod+f exec --no-startup-id urxvt -e ranger
-bindsym $mod+Shift+f exec --no-startup-id urxvt -e sudo ranger /
-bindsym $mod+m exec --no-startup-id urxvt -e ncmpcpp
-bindsym $mod+Shift+p exec --no-startup-id urxvt -e htop
+bindsym $mod+f exec $terminal -e ranger
+bindsym $mod+Shift+f exec $terminal -e sudo ranger /
+bindsym $mod+m exec $terminal -e ncmpcpp
+bindsym $mod+Shift+p exec $terminal -e htop
 
 # change focus
 bindsym $mod+h focus left
