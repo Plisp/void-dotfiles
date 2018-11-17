@@ -3,7 +3,7 @@ set $mod Mod4
 set $terminal --no-startup-id st
 
 # start applications
-#exec --no-startup-id mybar
+exec --no-startup-id mybar
 exec --no-startup-id wal -i bg.jpg
 exec_always --no-startup-id compton -CGb --xrender-sync-fence
 exec --no-startup-id emacs --daemon
@@ -38,7 +38,7 @@ bindsym Print exec maim -su ~/personal/$(date +%s).png
 
 # GUI
 bindsym $mod+Shift+e exec --no-startup-id emacsclient -ca ""
-bindsym $mod+b exec --no-startup-id qutebrowser --loglevel=critical
+bindsym $mod+b exec --no-startup-id qutebrowser --loglevel=critical --enable-webengine-inspector
 bindsym $mod+z exec --no-startup-id lock
 
 # CLI

@@ -1,4 +1,5 @@
 let mapleader = ","
+let g:netrw_banner=0
 
 set noswapfile
 set number
@@ -30,6 +31,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'jceb/vim-orgmode'
 
 Plug 'tmhedberg/matchit'
+
+Plug 'kshenoy/vim-signature'
 
 call plug#end()
 
