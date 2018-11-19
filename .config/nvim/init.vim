@@ -40,10 +40,13 @@ call plug#end()
 colorscheme gruvbox
 set termguicolors
 set background=dark
-hi! Normal ctermbg=NONE guibg=NONE
+"hi! Normal ctermbg=NONE guibg=NONE
 
 " lightline
 set noshowmode
+
+" YCM
+let g:ycm_global_ycm_extra_conf = "~/global_conf.py"
 
 " fzf
 nnoremap <leader>r :History<CR>

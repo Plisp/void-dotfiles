@@ -3,10 +3,10 @@ background = ${xrdb:color0:#aa002b36}
 background-alt = ${xrdb:color6:#333}
 
 ; text
-foreground = ${xrdb:color2:#cdc}
+foreground = ${xrdb:color1:#cdc}
 
 ; icons 
-foreground-alt = ${xrdb:color5:#7aa}
+foreground-alt = ${xrdb:color3:#7aa}
 
 ; TODO: use this
 primary = ${xrdb:color1:#00e5ff}
@@ -99,7 +99,7 @@ label-focused-background =
 label-focused-underline = ${colors.secondary}
 label-focused-padding = 2
 
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.foreground-alt}
 
 label-occupied = %index%
 label-occupied-padding = 2
