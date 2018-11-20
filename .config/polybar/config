@@ -37,8 +37,8 @@ padding-right=1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Inconsolata:pixelsize=13:antialias=true
-font-1 = Dejavu Sans Mono:pixelsize=10
+font-0 = "Hack:pixelsize=11:antialias=true;1"
+font-1 = "Dejavu Sans Mono:pixelsize=10;1"
 font-2 = siji:pixelsize=10:antialias=true
 
 modules-left = bspwm i3
@@ -320,7 +320,7 @@ format-warn-underline = ${colors.background}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.foreground}
 
 ramp-0 = 
 ramp-1 = 

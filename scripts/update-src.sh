@@ -9,7 +9,7 @@ rm -f /usr/local/bin/*
 cd /usr/local/src
 if [ ! -d ycmd ]; then
 	git clone https://github.com/Valloric/ycmd.git
-fi	
+fi
 
 cd ycmd
 git pull
@@ -43,7 +43,8 @@ make -j3 --quiet
 make install -j8 --quiet
 
 # universal-ctags (maintained ctags)
-rm /usr/local/bin/ctags /usr/local/bin/etags # don't want emacs ctags manual
+# don't want emacs-etags or its manual
+rm /usr/local/bin/ctags /usr/local/bin/etags
 rm /usr/local/share/man/man1/ctags.1.gz /usr/local/share/man/man1/etags.1.gz
 
 cd /usr/local/src

@@ -14,7 +14,7 @@ export GTAGSLIBPATH=$HOME/.gtags
 # Load personal settings
 [ -f ~/.personal ] && . ~/.personal
 
-# Automatically start i3
+# Automatically start X
 if [ "$(tty)" = "/dev/tty1" ]; then
 	pgrep i3 || exec startx
 fi
