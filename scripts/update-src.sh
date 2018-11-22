@@ -5,16 +5,6 @@
 mkdir -p /usr/local/src
 rm -f /usr/local/bin/*
 
-# ycmd (for use with emacs)
-cd /usr/local/src
-if [ ! -d ycmd ]; then
-	git clone https://github.com/Valloric/ycmd.git
-fi
-
-cd ycmd
-git pull
-./build.py --clang-completer --quiet
-
 # global (tagging)
 cd /usr/local/src
 if [ ! -d /usr/local/src/global ]; then
@@ -68,3 +58,14 @@ fi
 cd st
 git pull
 make clean install -j3 --quiet
+
+# ccls - c language server protocol
+cd /usr/local/src
+if [ ! -d ccls ]; then
+	git clone https://github.com/Maskray/ccls.git
+fi
+
+cd ccls
+git pull
+cmake -H. -BRelease -DSYSTEM_CLANG=on -DUSE_SHARED_LLVM=on -DLLVM_ENABLE_RTTI=on
+cmake --build Release

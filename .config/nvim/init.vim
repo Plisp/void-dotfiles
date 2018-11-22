@@ -23,9 +23,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" This is huge and should be compiled separately
-Plug 'Valloric/YouCompleteMe', { 'for': ['c', 'cpp'] }
-
 Plug 'rhysd/vim-clang-format'
 
 Plug 'jceb/vim-orgmode'
@@ -44,9 +41,6 @@ set background=dark
 
 " lightline
 set noshowmode
-
-" YCM
-let g:ycm_global_ycm_extra_conf = "~/global_conf.py"
 
 " fzf
 nnoremap <leader>r :History<CR>
