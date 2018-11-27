@@ -7,6 +7,7 @@ c.content.default_encoding = 'iso-8859-1'
 c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts', 'https://www.malwaredomainlist.com/hostslist/hosts.txt', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip', 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
 c.content.pdfjs = True
 c.downloads.position = 'bottom'
+c.downloads.remove_finished = 2
 c.editor.command = ['st', '-e', 'nvim', '{}']
 c.fonts.completion.entry = '10pt monospace'
 c.fonts.completion.category = 'bold 10pt monospace'
