@@ -5,7 +5,6 @@ set $terminal --no-startup-id st
 # start applications
 exec --no-startup-id mybar
 exec --no-startup-id wal -i bg.jpg
-exec --no-startup-id feh --bg-fill bg.jpg
 exec_always --no-startup-id compton -CGb --xrender-sync-fence
 exec --no-startup-id emacs --daemon
 exec --no-startup-id mpd

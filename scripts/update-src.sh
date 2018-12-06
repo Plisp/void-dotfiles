@@ -5,41 +5,28 @@
 mkdir -p /usr/local/src
 cd /usr/local/src
 
-# global (tagging)
-if [ ! -d /usr/local/src/global ]; then
-	git clone https://github.com/harai/gnu-global.git
+# universal-ctags (maintained ctags)
+if [ ! -d ctags ]; then
+	git clone https://github.com/universal-ctags/ctags.git
 fi
-
-cd global
+cd ctags
 git pull
-./configure --disable-gtagscscope --with-universal-ctags=/usr/local/bin/ctags --quiet
+./configure --enable-etags --quiet
+rm /usr/local/bin/ctags /usr/local/bin/etags
 make clean
 make -j3 --quiet
 make install -j8 --quiet
 cd ..
 
 # emacs
-#if [ ! -d emacs ]; then
-#	git clone https://git.savannah.gnu.org/git/emacs.git
-#fi
-
-#cd emacs
-#git pull
-#./configure --quiet --without-toolkit-scroll-bars --without-dbus --without-gsettings --without-libsystemd \
-#            --with-sound=alsa --with-mailutils --with-x-toolkit=athena --with-x
-#make clean
-#make -j3 --quiet
-#make install -j8 --quiet
-#cd ..
-
-# universal-ctags (maintained ctags)
-if [ ! -d ctags ]; then
-	git clone https://github.com/universal-ctags/ctags.git
+if [ ! -d emacs ]; then
+	git clone https://git.savannah.gnu.org/git/emacs.git
 fi
 
-cd ctags
+cd emacs
 git pull
-./configure --enable-etags --quiet
+./configure --quiet --without-toolkit-scroll-bars --without-dbus --without-gsettings --without-libsystemd \
+            --with-sound=alsa --with-mailutils --with-x-toolkit=athena --with-x
 make clean
 make -j3 --quiet
 make install -j8 --quiet
@@ -57,7 +44,7 @@ cd ..
 
 # ccls - c language server protocol
 if [ ! -d ccls ]; then
-	git clone https://github.com/Maskray/ccls.git
+	git clone https://github.com/Maskray/ccls.git --depth=1 --recursive
 fi
 
 cd ccls
