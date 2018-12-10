@@ -5,19 +5,6 @@
 mkdir -p /usr/local/src
 cd /usr/local/src
 
-# universal-ctags (maintained ctags)
-if [ ! -d ctags ]; then
-	git clone https://github.com/universal-ctags/ctags.git
-fi
-cd ctags
-git pull
-./configure --enable-etags --quiet
-rm /usr/local/bin/ctags /usr/local/bin/etags
-make clean
-make -j3 --quiet
-make install -j8 --quiet
-cd ..
-
 # emacs
 if [ ! -d emacs ]; then
 	git clone https://git.savannah.gnu.org/git/emacs.git
@@ -32,8 +19,22 @@ make -j3 --quiet
 make install -j8 --quiet
 cd ..
 
+# universal-ctags (maintained ctags) - run after emacs
+if [ ! -d ctags ]; then
+	git clone https://github.com/universal-ctags/ctags.git
+fi
+
+cd ctags
+git pull
+./configure --enable-etags --quiet
+rm /usr/local/bin/ctags /usr/local/bin/etags
+make clean
+make -j3 --quiet
+make install -j8 --quiet
+cd ..
+
 # suckless terminal
-if [ ! -d st ]; then
+if [ ! -d st/ ]; then
 	git clone https://github.com/Plisp/st.git
 fi
 
@@ -51,4 +52,5 @@ cd ccls
 git pull
 cmake -H. -BRelease -DSYSTEM_CLANG=on -DUSE_SHARED_LLVM=on -DLLVM_ENABLE_RTTI=on
 cmake --build Release
+ln -s Release/ccls /usr/local/bin
 cd ..

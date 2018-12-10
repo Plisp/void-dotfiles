@@ -20,9 +20,10 @@ alias et='emacsclient -ta ""'
 alias set='sudo -E emacsclient -ta ""'
 alias ee='emacsclient -e "(kill-emacs)"'
 
-alias v='nvim'
-alias vf='nvim $(fzf)'
-alias sv='sudo -E nvim'
+alias test_marks="echo 'Assessment Task 4 Marks: Input Student' && echo"
+
+alias vf='xvi $(fzf)'
+alias sv='sudo -E xvi'
 
 alias xq='xbps-query'
 alias xrm='sudo xbps-remove -Rvf'

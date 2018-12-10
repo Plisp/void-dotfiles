@@ -1,7 +1,7 @@
 # Environment variables
 export PATH=$HOME/scripts:$PATH
 
-export EDITOR='nvim'
+export EDITOR='xvi'
 export VISUAL='emacsclient -ca""'
 
 export FZF_DEFAULT_COMMAND="find . -type f ! -path '*/\.git/*'"
