@@ -43,6 +43,8 @@ git pull
 make clean install -j3 --quiet
 cd ..
 
+# dwm - coming soon
+
 # ccls - c language server protocol
 if [ ! -d ccls ]; then
 	git clone https://github.com/Maskray/ccls.git --depth=1 --recursive
@@ -53,4 +55,34 @@ git pull
 cmake -H. -BRelease -DSYSTEM_CLANG=on -DUSE_SHARED_LLVM=on -DLLVM_ENABLE_RTTI=on
 cmake --build Release
 ln -s Release/ccls /usr/local/bin
+cd ..
+
+# dmenu - application launcher
+if [ ! -d dmenu ]; then
+	git clone https://git.suckless.org/dmenu
+fi
+
+cd dmenu
+git pull
+sudo make clean install
+cd ..
+
+# slock
+if [ ! -d slock ]; then
+	git clone https://git.suckless.org/slock
+fi
+
+cd slock
+git pull
+sudo make clean install
+cd ..
+
+# slstatus - ultra lightweight status bar
+if [ ! -d slstatus ]; then
+	git clone https://git.suckless.org/slstatus
+fi
+
+cd slstatus
+git pull
+sudo make clean install
 cd ..

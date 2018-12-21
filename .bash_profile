@@ -11,9 +11,6 @@ export FZF_ALT_C_COMMAND="find / -type d ! -path '*/\.git/*' 2>/dev/null"
 export GTAGSCONF=$HOME/.globalrc
 export GTAGSLIBPATH=$HOME/.gtags
 
-# Load personal settings
-[ -f ~/.personal ] && . ~/.personal
-
 # Automatically start X
 if [ "$(tty)" = "/dev/tty1" ]; then
 	pgrep i3 || exec startx

@@ -20,8 +20,7 @@ alias et='emacsclient -ta ""'
 alias set='sudo -E emacsclient -ta ""'
 alias ee='emacsclient -e "(kill-emacs)"'
 
-alias test_marks="echo 'Assessment Task 4 Marks: Input Student' && echo"
-
+alias v='xvi'
 alias vf='xvi $(fzf)'
 alias sv='sudo -E xvi'
 
@@ -34,6 +33,9 @@ alias sr='sudo ranger'
 alias z='zathura'
 
 xrdb -merge ~/.Xdefaults
+
+# Load personal settings
+[ -f ~/.personal ] && . ~/.personal
 
 # fuzzy completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

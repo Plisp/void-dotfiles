@@ -3,4 +3,5 @@
 xmodmap ~/.Xmodmap
 xset r rate 200 50
 
-exec i3
+#exec i3
+exec dwm

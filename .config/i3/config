@@ -2,6 +2,9 @@
 set $mod Mod4
 set $terminal --no-startup-id st
 
+gaps inner 12
+gaps outer 5
+
 # start applications
 exec --no-startup-id mybar
 exec --no-startup-id wal -i bg.jpg
@@ -26,7 +29,7 @@ bindsym $mod+q kill
 bindsym --release $mod+Shift+q exec xkill
 
 # run application launcher
-bindsym $mod+x exec --no-startup-id rofi -show run -matching fuzzy
+bindsym $mod+x exec --no-startup-id dmenu_run
 
 # My bindings
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
@@ -39,7 +42,7 @@ bindsym Print exec maim -su ~/personal/$(date +%s).png
 # GUI
 bindsym $mod+Shift+e exec --no-startup-id emacsclient -ca ""
 bindsym $mod+b exec --no-startup-id qutebrowser --loglevel=critical --enable-webengine-inspector
-bindsym $mod+z exec --no-startup-id lock
+bindsym $mod+z exec --no-startup-id slock
 
 # CLI
 bindsym $mod+f exec $terminal -e ranger
@@ -158,10 +161,10 @@ client.background $bg
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing left will shrink the windows width.
+        # Pressing right will grow the windows width.
+        # Pressing up will shrink the windows height.
+        # Pressing down will grow the windows height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
