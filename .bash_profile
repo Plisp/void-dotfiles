@@ -2,7 +2,7 @@
 export PATH=$HOME/scripts:$PATH
 
 export EDITOR='xvi'
-export VISUAL='emacsclient -ca""'
+export VISUAL='emacs'
 
 export FZF_DEFAULT_COMMAND="find . -type f ! -path '*/\.git/*'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND

@@ -8,4 +8,3 @@ set redraw
 set optimize
 set beautify
 set slowopen
-set notabindent

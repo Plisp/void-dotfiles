@@ -14,7 +14,6 @@ cd emacs
 git pull
 ./configure --quiet --without-toolkit-scroll-bars --without-dbus --without-gsettings --without-libsystemd \
             --with-sound=alsa --with-mailutils --with-x-toolkit=athena --with-x
-make clean
 make -j3 --quiet
 make install -j8 --quiet
 cd ..
@@ -26,9 +25,8 @@ fi
 
 cd ctags
 git pull
+rm -f /usr/local/bin/ctags /usr/local/bin/etags
 ./configure --enable-etags --quiet
-rm /usr/local/bin/ctags /usr/local/bin/etags
-make clean
 make -j3 --quiet
 make install -j8 --quiet
 cd ..
@@ -43,7 +41,15 @@ git pull
 make clean install -j3 --quiet
 cd ..
 
-# dwm - coming soon
+# dwm - suckless window manager
+if [ ! -d dwm/ ]; then
+	git clone https://git.suckless.org/dwm
+fi
+
+cd dwm
+git pull
+make clean install -j3 --quiet
+cd ..
 
 # ccls - c language server protocol
 if [ ! -d ccls ]; then
@@ -54,7 +60,7 @@ cd ccls
 git pull
 cmake -H. -BRelease -DSYSTEM_CLANG=on -DUSE_SHARED_LLVM=on -DLLVM_ENABLE_RTTI=on
 cmake --build Release
-ln -s Release/ccls /usr/local/bin
+ln -sf Release/ccls /usr/local/bin
 cd ..
 
 # dmenu - application launcher
@@ -67,7 +73,7 @@ git pull
 sudo make clean install
 cd ..
 
-# slock
+# slock - suckless screen locker
 if [ ! -d slock ]; then
 	git clone https://git.suckless.org/slock
 fi
