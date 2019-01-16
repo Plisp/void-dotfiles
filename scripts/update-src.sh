@@ -12,6 +12,7 @@ fi
 
 cd emacs
 git pull
+./autogen.sh
 ./configure --quiet --without-toolkit-scroll-bars --without-dbus --without-gsettings --without-libsystemd \
             --with-sound=alsa --with-mailutils --with-x-toolkit=athena --with-x
 make -j3 --quiet
@@ -49,18 +50,6 @@ fi
 cd dwm
 git pull
 make clean install -j3 --quiet
-cd ..
-
-# ccls - c language server protocol
-if [ ! -d ccls ]; then
-	git clone https://github.com/Maskray/ccls.git --depth=1 --recursive
-fi
-
-cd ccls
-git pull
-cmake -H. -BRelease -DSYSTEM_CLANG=on -DUSE_SHARED_LLVM=on -DLLVM_ENABLE_RTTI=on
-cmake --build Release
-ln -sf Release/ccls /usr/local/bin
 cd ..
 
 # dmenu - application launcher

@@ -1,5 +1,5 @@
 # Environment variables
-export PATH=$HOME/scripts:$PATH
+export PATH=$HOME/scripts:$HOME/.roswell/bin:$PATH
 
 export EDITOR='xvi'
 export VISUAL='emacs'
