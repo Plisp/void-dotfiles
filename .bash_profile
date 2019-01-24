@@ -4,6 +4,8 @@ export PATH=$HOME/scripts:$HOME/.roswell/bin:$PATH
 export EDITOR='xvi'
 export VISUAL='emacs'
 
+export ENV='$HOME/.shinit'
+
 export FZF_DEFAULT_COMMAND="find . -type f ! -path '*/\.git/*'"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND="find / -type d ! -path '*/\.git/*' 2>/dev/null"
