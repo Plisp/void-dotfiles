@@ -8,7 +8,6 @@ gaps outer 5
 # start applications
 exec --no-startup-id mybar
 exec --no-startup-id wal -i bg.jpg
-exec --no-startup-id nm-applet &
 
 for_window [class="^.*"] border pixel 2
 font pango:DejaVu Sans Mono 8

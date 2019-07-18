@@ -8,6 +8,7 @@ feh --bg-fill ~/bg.png
 slstatus &
 compton -CGb --xrender-sync-fence
 mpd &
+nm-applet &
 
 #exec i3
 exec dwm
