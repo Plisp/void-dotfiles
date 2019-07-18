@@ -1,3 +1,4 @@
+c.content.pdfjs = True
 c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
 c.auto_save.interval = 300000
 c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #888888, stop:1 #505050)'
@@ -5,7 +6,6 @@ c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 24
 c.confirm_quit = ['downloads']
 c.content.default_encoding = 'iso-8859-1'
 c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip', 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
-c.content.pdfjs = True
 c.downloads.position = 'bottom'
 c.downloads.remove_finished = 2
 c.editor.command = ['st', '-e', 'nvim', '{}']
@@ -39,18 +39,7 @@ c.scrolling.smooth = True
 c.tabs.padding = { "bottom": 2, "left": 3, "right": 3, "top": 2 }
 c.url.default_page = 'https://google.com/'
 c.url.start_pages = ['https://google.com/']
-c.url.searchengines = {
-    'DEFAULT': 'https://google.com/?q={}',
-    'rd': 'https://reddit.com/r/{}',
-    'aw': 'https://wiki.archlinux.org/index.php?title=Special%3ASearch&search={}',
-    'vw': 'https://wiki.voidlinux.eu/index.php?search={}&title=Special%3ASearch',
-    'yt': 'https://www.youtube.com/results?search_query={}',
-    '4': 'https://boards.4chan.org/{}',
-    '8': 'https://8ch.net/{}',
-    'sk': 'https://www.skytorrents.in/search/all/ed/1/?l=en-us&q={}',
-    'tpb': 'http://thepiratebay.org/search/{}',
-}
-c.zoom.default = '110%'
+c.zoom.default = '125%'
 c.zoom.text_only = True
 
 c.bindings.commands["normal"] = {
@@ -80,8 +69,8 @@ c.bindings.commands["normal"] = {
         "<Ctrl-u>": "scroll-page 0 -0.5",
 
         "v": "enter-mode caret",
-        "i": "enter-mode insert",
-        "I": "enter-mode passthrough",
+        "I": "enter-mode insert",
+        "i": "enter-mode passthrough",
         "<Escape>": "clear-keychain ;; search ;; fullscreen --leave",
 
         "h": "run-with-count 2 scroll left",

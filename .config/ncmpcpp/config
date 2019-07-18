@@ -22,7 +22,7 @@ lyrics_directory = ~/.config/ncmpcpp/lyrics
 #
 ##### connection settings #####
 #
-#mpd_host = localhost
+mpd_host = localhost
 #
 #mpd_port = 6600
 #
@@ -84,12 +84,12 @@ visualizer_type = spectrum
 #
 visualizer_look = ◆━
 #
-visualizer_color = magenta, blue, cyan, green, yellow, red
+#visualizer_color = magenta, blue, cyan, green, yellow, red
 #
 ## Alternative subset of 256 colors for terminals that support it.
 ##
-#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
-#
+visualizer_color = 20, 25, 24, 30, 36, 48, 119, 155, 185, 215, 209, 197
+
 ##### system encoding #####
 ##
 ## ncmpcpp should detect your charset encoding but if it failed to do so, you
@@ -262,7 +262,7 @@ current_item_inactive_column_suffix = $/r$(end)
 ##   available.
 ##
 #
-song_columns_list_format = "(10f)[magenta]{l} (15)[magenta]{c} (30)[magenta]{t|f} (25)[magenta]{pE} (30)[magenta]{CrE}"
+song_columns_list_format = "(10f)[green]{l} (15f)[green]{c} (25)[green]{t|f} (25)[green]{pE} (28)[cyan]{CrE}"
 #
 ##### various settings #####
 #

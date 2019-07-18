@@ -2,6 +2,9 @@
 
 ## General options
 
+# meta key - use alt-shift
+OPTIONS=altmeta
+
 # must have color!
 OPTIONS=color
 

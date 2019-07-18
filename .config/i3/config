@@ -1,17 +1,14 @@
 # set variables
 set $mod Mod4
-set $terminal --no-startup-id st
+set $terminal --no-startup-id sakura
 
-gaps inner 12
+gaps inner 15
 gaps outer 5
 
 # start applications
 exec --no-startup-id mybar
 exec --no-startup-id wal -i bg.jpg
-exec_always --no-startup-id compton -CGb --xrender-sync-fence
-exec --no-startup-id emacs --daemon
-exec --no-startup-id mpd
-exec --no-startup-id autocutsel -fork
+exec --no-startup-id nm-applet &
 
 for_window [class="^.*"] border pixel 2
 font pango:DejaVu Sans Mono 8
@@ -22,7 +19,7 @@ workspace_auto_back_and_forth yes
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec $terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -40,7 +37,7 @@ bindsym XF86AudioMute exec --no-startup-id "amixer -q sset Master,0 toggle"
 bindsym Print exec maim -su ~/personal/$(date +%s).png
 
 # GUI
-bindsym $mod+Shift+e exec --no-startup-id emacsclient -ca ""
+bindsym $mod+Shift+e exec --no-startup-id emacs
 bindsym $mod+b exec --no-startup-id qutebrowser --loglevel=critical --enable-webengine-inspector
 bindsym $mod+z exec --no-startup-id slock
 
