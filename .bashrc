@@ -1,5 +1,5 @@
 #dash -E
-transset -a 0.85
+#transset -a 0.85
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 6)\]\\$ \[$(tput sgr0)\]"
 
@@ -31,14 +31,14 @@ alias xq='xbps-query'
 alias xrm='sudo xbps-remove -Rvf'
 alias xrc='sudo xbps-reconfigure -vf'
 
+alias sx='sxiv -t *.{jpg,png}'
+
 alias r='ranger'
 alias sr='sudo ranger'
 alias z='zathura'
 
-xrdb -merge ~/.Xdefaults
-
 # Load personal settings
-[ -f ~/.personal ] && . ~/.personal
+[ -f ~/.personal ] && source ~/.personal
 
 # fuzzy completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
