@@ -1,5 +1,5 @@
 #dash -E
-transset -a 0.85 >/dev/null
+#transset -a 0.85 >/dev/null
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 6)\]\\$ \[$(tput sgr0)\]"
 
@@ -25,7 +25,7 @@ alias ee='emacsclient -e "(kill-emacs)"'
 
 alias v='nvim'
 alias vf='nvim $(fzf)'
-alias sv='sudo -E nvim'
+alias sev='sudo -E nvim'
 
 alias xq='xbps-query'
 alias xrm='sudo xbps-remove -Rvf'
