@@ -8,6 +8,12 @@ OPTIONS=altmeta
 # must have color!
 OPTIONS=color
 
+# show turns elapsed
+OPTIONS=time
+
+# use line drawing syms
+OPTIONS=symset:DECgraphics
+
 # dig automatically
 OPTIONS=autodig
 
@@ -45,7 +51,7 @@ OPTIONS=msg_window:reversed
 MSGTYPE=hide "You swap places with your .*"
 MSGTYPE=hide "You (climb|fly) (up|down) .*"
 MSGTYPE=hide "You descend .*"
-# alert if hungry
+# alert if hungry or ready to enhance
 MSGTYPE=stop ".* needs food, badly!"
 MSGTYPE=stop "You feel more confident .*"
 
@@ -56,7 +62,7 @@ OPTIONS=pickup_burden:unencumbered
 OPTIONS=pickup_thrown
 
 # Food - edit and allow for corpses
-AUTOPICKUP_EXCEPTION="<(lichen corpse|food ration|pancake|apple|banana|wolfsbane|eucalyptus|garlic|avocado|cookie|pear|royal|candy|orange|carrot|melon|pie)"
+AUTOPICKUP_EXCEPTION="<(egg|lichen|ration|eggplant|pancake|apple|banana|wolfsbane|eucalyptus|garlic|avocado|cookie|pear|royal|candy|orange|carrot|melon|pie)"
 
 # Keep ammo to oneself
 AUTOPICKUP_EXCEPTION="<.*dagger"
@@ -67,7 +73,7 @@ AUTOPICKUP_EXCEPTION="<.*throwing star"
 AUTOPICKUP_EXCEPTION="<.*shuriken"
 
 # Things that shouldn't be picked up
-AUTOPICKUP_EXCEPTION=">((gray |load|luck|flint |touch)stone|junk|glass|chest|large box)"
+AUTOPICKUP_EXCEPTION=">((gray |load|flint )stone|junk|glass|chest|large box)"
 AUTOPICKUP_EXCEPTION=">scroll (of|called) scare monster"
 
 # unwanted artifacts
@@ -81,7 +87,7 @@ AUTOPICKUP_EXCEPTION="> named empty"
 OPTIONS=statushilites:10
 
 OPTIONS=hilite_status: gold/changed/yellow
-OPTIONS=hilite_status: hitpoints/100%/green&underline/<100%/lightgreen/<60%/yellow/<40%/orange&underline
+OPTIONS=hilite_status: hitpoints/100%/grey&normal/<100%/green/<60%/yellow/<40%/orange&underline
 OPTIONS=hilite_status: carrying-capacity/burdened/yellow/stressed/orange/strained/orange&underline
 OPTIONS=hilite_status: condition/major_troubles/red
 OPTIONS=hilite_status: strength/down/orange/up/cyan
@@ -102,9 +108,14 @@ OPTIONS=hitpointbar
 # colors in menu
 OPTIONS=menucolors
 
-MENUCOLOR=" (holy|blessed) "=green
+MENUCOLOR=" uncursed "=green
+MENUCOLOR=" (holy|blessed) "=yellow
 MENUCOLOR=" (unholy|cursed) "=red
-MENUCOLOR=" cursed .* (being worn)"=orange&underline
+MENUCOLOR=" cursed .* (being worn)"=orange
+
+MENUCOLOR=".*a$"=green
+MENUCOLOR=".*b$"=yellow
+MENUCOLOR=".*c$"=red
 
 ## Personal settings (TODO: add tourist after ascending once)
 OPTIONS=fruit:eggplant

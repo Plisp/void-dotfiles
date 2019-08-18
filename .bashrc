@@ -1,7 +1,10 @@
+# Load personal settings
+[ -f ~/.personal ] && source ~/.personal
+
 #dash -E
 #transset -a 0.85 >/dev/null
 
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 6)\]\\$ \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 6)\]\\$\[$(tput sgr0)\] "
 
 # auto cd into dirs
 complete -d cd
@@ -36,9 +39,6 @@ alias sx='sxiv -t *.{jpg,png}'
 alias r='ranger'
 alias sr='sudo ranger'
 alias z='zathura'
-
-# Load personal settings
-[ -f ~/.personal ] && source ~/.personal
 
 # fuzzy completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
