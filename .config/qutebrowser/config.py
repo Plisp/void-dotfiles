@@ -62,6 +62,7 @@ c.bindings.commands["normal"] = {
         "st": "set-cmd-text -s set -t",
 
         "<Ctrl-s>": "stop",
+        "tt": "tab-open",
         "<Ctrl-w>": "tab-close",
         "<Ctrl-Return>": "follow-selected -t",
         "<Ctrl-r>": "reload",

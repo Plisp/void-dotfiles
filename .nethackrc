@@ -2,7 +2,7 @@
 
 ## General options
 
-# meta key - use alt-shift
+# extended command shortcuts
 OPTIONS=altmeta
 
 # must have color!
@@ -17,7 +17,7 @@ OPTIONS=symset:DECgraphics
 # dig automatically
 OPTIONS=autodig
 
-# show in status
+# show experience points in status
 OPTIONS=showexp
 
 # automatically reload
@@ -32,7 +32,7 @@ OPTIONS=lit_corridor
 # never use numberpad for movement
 OPTIONS=number_pad:0
 
-# hilite piles of stuff
+# highlight multiple items
 OPTIONS=hilite_pile
 OPTIONS=pile_limit:2
 
@@ -47,13 +47,13 @@ OPTIONS=!cmdassist
 
 OPTIONS=msg_window:reversed
 
-# hide useless messages
-MSGTYPE=hide "You swap places with your .*"
-MSGTYPE=hide "You (climb|fly) (up|down) .*"
-MSGTYPE=hide "You descend .*"
-# alert if hungry or ready to enhance
-MSGTYPE=stop ".* needs food, badly!"
-MSGTYPE=stop "You feel more confident .*"
+# important events
+MSGTYPE=stop "You are beginning to feel weak."
+MSGTYPE=stop "The .* (grabs|swings itself around) you!"
+MSGTYPE=stop "You don't feel very well."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "You feel more confident"
+MSGTYPE=stop "You feel a strange vibration"
 
 ## autopickup rules
 OPTIONS=autopickup
@@ -62,26 +62,16 @@ OPTIONS=pickup_burden:unencumbered
 OPTIONS=pickup_thrown
 
 # Food - edit and allow for corpses
-AUTOPICKUP_EXCEPTION="<(egg|lichen|ration|eggplant|pancake|apple|banana|wolfsbane|eucalyptus|garlic|avocado|cookie|pear|royal|candy|orange|carrot|melon|pie)"
+AUTOPICKUP_EXCEPTION="<(egg|tin|lichen|ration|eggplant|pancake|apple|banana|wolfsbane|eucalyptus|garlic|avocado|cookie|pear|royal|candy|orange|carrot|melon|pie)"
 
-# Keep ammo to oneself
-AUTOPICKUP_EXCEPTION="<.*dagger"
-AUTOPICKUP_EXCEPTION="<.*arrow"
-AUTOPICKUP_EXCEPTION="<.*dart"
-AUTOPICKUP_EXCEPTION="<.*knife"
-AUTOPICKUP_EXCEPTION="<.*throwing star"
-AUTOPICKUP_EXCEPTION="<.*shuriken"
+# Keep daggers, darts and knives - useful for rogue
+#AUTOPICKUP_EXCEPTION="<dagger"
+#AUTOPICKUP_EXCEPTION="<dart"
+#AUTOPICKUP_EXCEPTION="<knife"
 
 # Things that shouldn't be picked up
 AUTOPICKUP_EXCEPTION=">((gray |load|flint )stone|junk|glass|chest|large box)"
 AUTOPICKUP_EXCEPTION=">scroll (of|called) scare monster"
-
-# unwanted artifacts
-autopickup_exception="<[^| ]the "
-
-# empty wands
-autopickup_exception=":0¥)"
-AUTOPICKUP_EXCEPTION="> named empty"
 
 ## Status highlighting
 OPTIONS=statushilites:10
@@ -108,25 +98,14 @@ OPTIONS=hitpointbar
 # colors in menu
 OPTIONS=menucolors
 
-MENUCOLOR=" uncursed "=green
-MENUCOLOR=" (holy|blessed) "=yellow
-MENUCOLOR=" (unholy|cursed) "=red
-MENUCOLOR=" cursed .* (being worn)"=orange
+MENUCOLOR=" uncursed"=green
+MENUCOLOR=" (holy|blessed)"=blue
+MENUCOLOR=" (unholy|cursed)"=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline
+MENUCOLOR="(ammy|opening|cbra|bdead)"=purple
 
-MENUCOLOR=".*a$"=green
-MENUCOLOR=".*b$"=yellow
-MENUCOLOR=".*c$"=red
-
-## Personal settings (TODO: add tourist after ascending once)
+## Personal settings
 OPTIONS=fruit:eggplant
 OPTIONS=catname:Garfield,pettype:cat,hilite_pet
-#CHOOSE=rogue,wiz
-#[rogue]
-OPTIONS=role:ro,race:human,align:cha,gender:male
-#[wiz]
-#OPTIONS=role:wizard,race:elf,align:cha,gender:female
 
-# For more information on what you can set in your nethackrc file, refer to:
-#    http://www.nethack.org/v343/Guidebook.html#_TOCentry_42
-# or http://nethackwiki.com/wiki/Options
-# Happy hacking!
+#eof
