@@ -1,0 +1,36 @@
+xterm*faceName: Input Mono
+xterm*faceSize: 15
+xterm*savelines: 1000
+xterm*scrollTtyOutput: false
+
+xterm*eightBitInput: false
+
+!! black dark/light
+xterm*color0: #073642
+xterm*color8: #002b36
+!! red dark/light
+xterm*color1: #dc322f
+xterm*color9: #d30102
+!! green dark/light
+xterm*color2: #859900
+xterm*color10: #586e75
+!! yellow dark/light
+xterm*color3: #b58900
+xterm*color11: #657b83
+!! blue dark/light
+xterm*color4: #6c71c4
+xterm*color12: #839496
+!! magenta dark/light[
+xterm*color5: #d33682
+xterm*color13: #268bd2
+!! cyan dark/light
+xterm*color6: #2aa198
+xterm*color14: #93a1a1
+!! white dark/light
+xterm*color7: #eee8d5
+xterm*color15: #fdf6e3
+
+xterm*background: #073642
+xterm*foreground: #657b83
+
+XTerm*cursorColor: lime green

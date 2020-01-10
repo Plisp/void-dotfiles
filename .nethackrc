@@ -2,6 +2,9 @@
 
 ## General options
 
+# either always annoying or OP
+OPTIONS=!bones
+
 # extended command shortcuts
 OPTIONS=altmeta
 
@@ -12,13 +15,16 @@ OPTIONS=color
 OPTIONS=time
 
 # use line drawing syms
-OPTIONS=symset:DECgraphics
+#OPTIONS=symset:DECgraphics
 
 # dig automatically
 OPTIONS=autodig
 
 # show experience points in status
 OPTIONS=showexp
+
+# show score in status
+OPTIONS=showscore
 
 # automatically reload
 OPTIONS=autoquiver
@@ -45,21 +51,27 @@ OPTIONS=!verbose
 # no message when you do something wrong
 OPTIONS=!cmdassist
 
+# full window, 60 messages, newest message first
+OPTIONS=msghistory:60
 OPTIONS=msg_window:reversed
 
-# important events
+# quell unwarranted message verbosity
+MSGTYPE=hide "You swap places with your .*"
+MSGTYPE=norep "You see here a.*"
+
+# pause when something important happens
 MSGTYPE=stop "You are beginning to feel weak."
 MSGTYPE=stop "The .* (grabs|swings itself around) you!"
 MSGTYPE=stop "You don't feel very well."
 MSGTYPE=stop "You are slowing down."
 MSGTYPE=stop "You feel more confident"
+MSGTYPE=stop "You feel feverish"
 MSGTYPE=stop "You feel a strange vibration"
 
 ## autopickup rules
 OPTIONS=autopickup
-OPTIONS=pickup_types:$?!/(
+OPTIONS=pickup_types:$?!/
 OPTIONS=pickup_burden:unencumbered
-OPTIONS=pickup_thrown
 
 # Food - edit and allow for corpses
 AUTOPICKUP_EXCEPTION="<(egg|tin|lichen|ration|eggplant|pancake|apple|banana|wolfsbane|eucalyptus|garlic|avocado|cookie|pear|royal|candy|orange|carrot|melon|pie)"

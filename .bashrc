@@ -2,7 +2,7 @@
 [ -f ~/.personal ] && source ~/.personal
 
 #dash -E
-#transset -a 0.85 >/dev/null
+#transset -a 0.88 >/dev/null
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 6)\]\\$\[$(tput sgr0)\] "
 
@@ -20,15 +20,9 @@ alias l='ls -Alh --color=always'
 alias l.='ls * -A --color=always'
 alias sd='sudo shutdown -h now'
 
-alias ec='emacsclient -ca ""'
-alias sec='sudo -E emacsclient -ca ""'
-alias et='emacsclient -ta ""'
-alias set='sudo -E emacsclient -ta ""'
-alias ee='emacsclient -e "(kill-emacs)"'
-
-alias v='nvim'
-alias vf='nvim $(fzf)'
-alias sev='sudo -E nvim'
+alias v='nano'
+alias vf='nano $(fzf)'
+alias sev='sudo -E nano'
 
 alias xq='xbps-query'
 alias xrm='sudo xbps-remove -Rvf'
@@ -36,9 +30,11 @@ alias xrc='sudo xbps-reconfigure -vf'
 
 alias sx='sxiv -t *.{jpg,png}'
 
-alias r='ranger'
-alias sr='sudo ranger'
+alias r='nnn'
+alias sr='sudo nnn'
 alias z='zathura'
+
+alias cl='GOGC=-1 scc -c --no-cocomo'
 
 # fuzzy completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
