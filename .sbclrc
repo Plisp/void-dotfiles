@@ -6,3 +6,8 @@
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
 
+(defun dtor (d)
+  (* d pi 1/360))
+
+(defun rtod (r)
+  (/ r pi 1/360))

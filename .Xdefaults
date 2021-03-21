@@ -1,5 +1,5 @@
 xterm*faceName: Input Mono
-xterm*faceSize: 15
+xterm*faceSize: 12
 xterm*savelines: 1000
 xterm*scrollTtyOutput: false
 

@@ -3,7 +3,7 @@
 ## General options
 
 # either always annoying or OP
-OPTIONS=!bones
+OPTIONS=bones
 
 # extended command shortcuts
 OPTIONS=altmeta
@@ -15,7 +15,7 @@ OPTIONS=color
 OPTIONS=time
 
 # use line drawing syms
-#OPTIONS=symset:DECgraphics
+OPTIONS=symset:DECgraphics
 
 # dig automatically
 OPTIONS=autodig
@@ -82,8 +82,8 @@ AUTOPICKUP_EXCEPTION="<(egg|tin|lichen|ration|eggplant|pancake|apple|banana|wolf
 #AUTOPICKUP_EXCEPTION="<knife"
 
 # Things that shouldn't be picked up
-AUTOPICKUP_EXCEPTION=">((gray |load|flint )stone|junk|glass|chest|large box)"
-AUTOPICKUP_EXCEPTION=">scroll (of|called) scare monster"
+AUTOPICKUP_EXCEPTION=">(gray |load|flint )stone|junk|glass|chest|large box|.*spear"
+AUTOPICKUP_EXCEPTION=">scroll (of|called) scare"
 
 ## Status highlighting
 OPTIONS=statushilites:10
@@ -119,5 +119,5 @@ MENUCOLOR="(ammy|opening|cbra|bdead)"=purple
 ## Personal settings
 OPTIONS=fruit:eggplant
 OPTIONS=catname:Garfield,pettype:cat,hilite_pet
-
-#eof
+OPTIONS=role:wiz,race:elf,align:cha,gender:fem
+#OPTIONS=playmode:debug
