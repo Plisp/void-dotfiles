@@ -10,6 +10,7 @@ set scrolloff=2
 set nowrap
 set splitright
 set splitbelow
+set colorcolumn=80
 "set expandtab
 set ve="onemore"
 
@@ -36,15 +37,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'tmhedberg/matchit'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'w0rp/ale'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-racer'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -63,27 +56,36 @@ nnoremap <leader>r :History<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>t :Files<CR>
 
-"" lsp
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
-nmap <F5> <Plug>(lcn-menu)
 
-"" ncm
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
-" found' messages
-set shortmess+=c
+"" coc
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nn <silent> K :call CocActionAsync('doHover')<cr>
 
-" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
+set updatetime=300
+au CursorHold * silent call CocActionAsync('highlight')
 
-" When the <Enter> key is pressed while the popup menu is visible, it only
-" hides the menu. Use this mapping to close the menu and also start a new
-" line.
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" completion
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nmap <silent> [e <Plug>(coc-diagnostic-prev)
+nmap <silent> ]e <Plug>(coc-diagnostic-next)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Symbol renaming.
+nmap <leader>r <Plug>(coc-rename)
