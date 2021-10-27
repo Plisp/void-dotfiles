@@ -5,10 +5,9 @@ xset r rate 200 50
 
 emacs --daemon
 redshift -l 33.8:151.2 &
-setroot -s ~/bg.jpg
-wal -i ~/bg.jpg
-slstatus &
 picom -b
+setroot -s ~/bg.jpg
+slstatus &
 mpd &
 dunst &
 

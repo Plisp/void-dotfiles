@@ -88,4 +88,4 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " Symbol renaming.
-nmap <leader>r <Plug>(coc-rename)
+nmap <leader>R <Plug>(coc-rename)
