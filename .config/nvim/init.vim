@@ -62,7 +62,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 nn <silent> K :call CocActionAsync('doHover')<cr>
 
-set updatetime=300
+set updatetime=100
 au CursorHold * silent call CocActionAsync('highlight')
 
 " completion

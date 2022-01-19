@@ -11,7 +11,6 @@ slstatus &
 mpd &
 dunst &
 
-#🚀�帅ཧྐྵྨླྺྼྻྂ⸻
-#/home/plisp/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src
+#ỳ🚀�帅ཧྐྵྨླྺྼྻྂ⸻
 #exec i3
 exec dwm
