@@ -1,6 +1,7 @@
 # Environment variables
-export PATH=$HOME/scripts:$HOME/.roswell/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/scripts:$HOME/.roswell/bin:$HOME/.cargo/bin:$HOME/.cabal/bin:$PATH
 export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/
+export GOPATH=$HOME/.config
 
 export EDITOR='nvim'
 export VISUAL='emacs'

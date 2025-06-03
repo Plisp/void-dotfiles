@@ -1,11 +1,13 @@
 # Load personal settings
 [ -f $HOME/.personal ] && source $HOME/.personal
 
+export JAVA_HOME="/usr/lib/jvm/openjdk11/"
+
 #dash -E
 picom-trans -c 90
 
 #export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 6)\]\\$\[$(tput sgr0)\] "
-export PS1="\[$(tput bold)\]\[$(tput setaf 6)\]\u\[$(tput setaf 4)\]@\[$(tput setaf 1)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 6)\]\\$\[$(tput sgr0)\] "
+export PS1="\[$(tput bold)\]\[$(tput setaf 6)\]\w\[$(tput setaf 6)\] \\$\[$(tput sgr0)\] "
 
 # auto cd into dirs
 complete -d cd

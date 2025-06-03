@@ -6,6 +6,7 @@ set number
 set relativenumber
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set scrolloff=2
 set nowrap
 set splitright
@@ -37,8 +38,6 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'tmhedberg/matchit'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 call plug#end()
 
 "" solarized
@@ -54,38 +53,3 @@ set noshowmode
 "" fzf
 nnoremap <leader>r :History<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>t :Files<CR>
-
-
-"" coc
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nn <silent> K :call CocActionAsync('doHover')<cr>
-
-set updatetime=100
-au CursorHold * silent call CocActionAsync('highlight')
-
-" completion
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nmap <silent> [e <Plug>(coc-diagnostic-prev)
-nmap <silent> ]e <Plug>(coc-diagnostic-next)
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" Symbol renaming.
-nmap <leader>R <Plug>(coc-rename)

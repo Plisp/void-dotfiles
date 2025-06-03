@@ -30,7 +30,7 @@ mpd_host = localhost
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = "~/Music"
+mpd_music_dir = "/home/plisp/Music"
 #
 mpd_crossfade_time = 1
 #
@@ -262,7 +262,7 @@ current_item_inactive_column_suffix = $/r$(end)
 ##   available.
 ##
 #
-song_columns_list_format = "(10f)[green]{l} (15f)[green]{c} (25)[green]{t|f} (25)[green]{pE} (28)[cyan]{CrE}"
+song_columns_list_format = "(10f)[green]{l} (15f)[green]{c} (25)[green]{t|f} (28)[cyan]{CE}"
 #
 ##### various settings #####
 #

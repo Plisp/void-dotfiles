@@ -3,14 +3,17 @@
 xmodmap ~/.Xmodmap
 xset r rate 200 50
 
-emacs --daemon
+#emacs --daemon
 redshift -l 33.8:151.2 &
-picom -b
+#picom -b
 setroot -s ~/bg.jpg
 slstatus &
 mpd &
-dunst &
+#dunst &
+#socklog &
 
 #ỳ🚀�帅ཧྐྵྨླྺྼྻྂ⸻
-#exec i3
+# sudo powertop --auto-tune
+# sudo rfkill block bluetooth
+# sudo date
 exec dwm
